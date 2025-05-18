@@ -215,7 +215,6 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
         <div className="flex justify-center mb-4">
           <TabsList>
             <TabsTrigger value="all">Todos</TabsTrigger>
-            <TabsTrigger value="urban">Urbano</TabsTrigger>
             <TabsTrigger value="highway">Rodovia</TabsTrigger>
             <TabsTrigger value="specialized">Especializado</TabsTrigger>
             <TabsTrigger value="eco-friendly">Ecológico</TabsTrigger>
@@ -226,83 +225,6 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {filteredExamples.map((example) => (
               <Card key={example.id} className="overflow-hidden">
-                <CardHeader className="pb-3">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-lg">{example.title}</CardTitle>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Button variant="ghost" size="icon" className="h-6 w-6">
-                            <Info className="h-4 w-4 text-green-700" />
-                          </Button>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-sm">
-                          <p>
-                            Este exemplo mostra um cenário típico de transporte rodoviário no Brasil. Clique em
-                            "Carregar Exemplo" para preencher automaticamente os dados do calculador.
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </div>
-                  <CardDescription>{example.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="pb-3">
-                  <div className="grid grid-cols-3 gap-2 text-center mb-3">
-                    <div>
-                      <p className="text-xs text-gray-500">CO2</p>
-                      <p className="font-semibold">{formatNumber(example.co2)} kg</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">Árvores</p>
-                      <p className="font-semibold">{formatNumber(example.trees)}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">Diesel</p>
-                      <p className="font-semibold">{formatNumber(example.diesel)} L</p>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Truck className="h-4 w-4 text-green-700" />
-                      <span className="text-sm">
-                        {getTruckTypeName(example.data.truck.type)} ({example.data.truck.year})
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Route className="h-4 w-4 text-green-700" />
-                      <span className="text-sm">
-                        {example.data.operation.distanceKm} km ({getRouteTypeName(example.data.operation.routeType)})
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Package className="h-4 w-4 text-green-700" />
-                      <span className="text-sm">
-                        {example.data.cargo.weightTonnes} toneladas ({getCargoTypeName(example.data.cargo.type)})
-                      </span>
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button
-                    onClick={() => handleLoadExample(example.data)}
-                    className="w-full bg-green-600 hover:bg-green-700"
-                  >
-                    Carregar Exemplo
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </TabsContent>
-
-        {/* These TabsContent components will use the same filtered examples based on category */}
-        <TabsContent value="urban" className="mt-0">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {filteredExamples.map((example) => (
-              <Card key={example.id} className="overflow-hidden">
-                {/* Same card content as above */}
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-lg">{example.title}</CardTitle>
@@ -621,7 +543,6 @@ function getTruckTypeName(type: string) {
 function getRouteTypeName(type: string) {
   const types: Record<string, string> = {
     highway: "Rodovia",
-    urban: "Urbana",
     mixed: "Mista",
     mountainous: "Montanhosa",
   }
