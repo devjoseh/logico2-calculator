@@ -16,34 +16,6 @@ interface ExamplesTabProps {
 // Define predefined examples
 const examples = [
   {
-    id: "urban-delivery",
-    title: "Entrega Urbana em São Paulo",
-    description: "VUC realizando entregas diárias na região metropolitana de São Paulo",
-    category: "urban",
-    co2: 42.5,
-    trees: 2.02,
-    diesel: 15.86,
-    data: {
-      truck: {
-        type: "light",
-        year: 2018,
-        fuelType: "diesel",
-        fuelEfficiency: 6.0, // km/L
-      },
-      operation: {
-        distanceKm: 80,
-        routeType: "urban",
-        trips: 1,
-        period: "day",
-      },
-      cargo: {
-        weightTonnes: 3.5,
-        type: "general",
-        loadFactor: 70, // percentage
-      },
-    },
-  },
-  {
     id: "regional-delivery",
     title: "Distribuição Regional",
     description: "Caminhão Toco transportando mercadorias entre cidades do interior de São Paulo",
@@ -124,34 +96,6 @@ const examples = [
         weightTonnes: 57.0,
         type: "bulk",
         loadFactor: 95, // percentage
-      },
-    },
-  },
-  {
-    id: "refrigerated",
-    title: "Transporte Refrigerado",
-    description: "Caminhão refrigerado transportando produtos perecíveis entre estados",
-    category: "specialized",
-    co2: 1356.4,
-    trees: 64.59,
-    diesel: 506.12,
-    data: {
-      truck: {
-        type: "heavy",
-        year: 2017,
-        fuelType: "diesel",
-        fuelEfficiency: 2.0, // km/L
-      },
-      operation: {
-        distanceKm: 850,
-        routeType: "highway",
-        trips: 1,
-        period: "week",
-      },
-      cargo: {
-        weightTonnes: 18.0,
-        type: "refrigerated",
-        loadFactor: 85, // percentage
       },
     },
   },
