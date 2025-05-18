@@ -6,11 +6,10 @@ import { TruckForm } from "@/components/truck-form"
 import { OperationForm } from "@/components/operation-form"
 import { CargoForm } from "@/components/cargo-form"
 import { ResultsDisplay } from "@/components/results-display"
-import { Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { ExamplesTab } from "@/components/examples-tab"
+import { InfoButton } from "@/components/info-button"
 
 export type CalculatorData = {
   truck: {
@@ -197,21 +196,15 @@ export function Calculator() {
               <TabsTrigger value="operation">Operação</TabsTrigger>
               <TabsTrigger value="cargo">Carga</TabsTrigger>
             </TabsList>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Info className="h-5 w-5 text-green-700" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent className="max-w-sm">
-                  <p>
-                    Preencha os dados do seu caminhão, operação e carga para calcular o impacto ambiental. Os valores
-                    devem refletir a operação no período selecionado.
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+
+            <InfoButton
+              content={
+                <p>
+                  Preencha os dados do seu caminhão, operação e carga para calcular o impacto ambiental. Os valores
+                  devem refletir a operação no período selecionado.
+                </p>
+              }
+            />
           </div>
 
           <Card>

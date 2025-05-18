@@ -4,9 +4,9 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Truck, Route, Package, ArrowRight, Info } from "lucide-react"
+import { Truck, Route, Package, ArrowRight } from "lucide-react"
 import type { CalculatorData } from "./calculator"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { InfoButton } from "@/components/info-button"
 
 interface ExamplesTabProps {
   setCalculatorData: (data: CalculatorData) => void
@@ -228,21 +228,15 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-lg">{example.title}</CardTitle>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Button variant="ghost" size="icon" className="h-6 w-6">
-                            <Info className="h-4 w-4 text-green-700" />
-                          </Button>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-sm">
-                          <p>
-                            Este exemplo mostra um cenário típico de transporte rodoviário no Brasil. Clique em
-                            "Carregar Exemplo" para preencher automaticamente os dados do calculador.
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    <InfoButton
+                      content={
+                        <p>
+                          Este exemplo mostra um cenário típico de transporte rodoviário no Brasil. Clique em "Carregar
+                          Exemplo" para preencher automaticamente os dados do calculador.
+                        </p>
+                      }
+                      side="top"
+                    />
                   </div>
                   <CardDescription>{example.description}</CardDescription>
                 </CardHeader>
@@ -304,21 +298,15 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-lg">{example.title}</CardTitle>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Button variant="ghost" size="icon" className="h-6 w-6">
-                            <Info className="h-4 w-4 text-green-700" />
-                          </Button>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-sm">
-                          <p>
-                            Este exemplo mostra um cenário típico de transporte rodoviário no Brasil. Clique em
-                            "Carregar Exemplo" para preencher automaticamente os dados do calculador.
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    <InfoButton
+                      content={
+                        <p>
+                          Este exemplo mostra um cenário típico de transporte rodoviário no Brasil. Clique em "Carregar
+                          Exemplo" para preencher automaticamente os dados do calculador.
+                        </p>
+                      }
+                      side="top"
+                    />
                   </div>
                   <CardDescription>{example.description}</CardDescription>
                 </CardHeader>
@@ -380,21 +368,15 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-lg">{example.title}</CardTitle>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Button variant="ghost" size="icon" className="h-6 w-6">
-                            <Info className="h-4 w-4 text-green-700" />
-                          </Button>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-sm">
-                          <p>
-                            Este exemplo mostra um cenário típico de transporte rodoviário no Brasil. Clique em
-                            "Carregar Exemplo" para preencher automaticamente os dados do calculador.
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    <InfoButton
+                      content={
+                        <p>
+                          Este exemplo mostra um cenário típico de transporte rodoviário no Brasil. Clique em "Carregar
+                          Exemplo" para preencher automaticamente os dados do calculador.
+                        </p>
+                      }
+                      side="top"
+                    />
                   </div>
                   <CardDescription>{example.description}</CardDescription>
                 </CardHeader>
@@ -456,21 +438,15 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-lg">{example.title}</CardTitle>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Button variant="ghost" size="icon" className="h-6 w-6">
-                            <Info className="h-4 w-4 text-green-700" />
-                          </Button>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-sm">
-                          <p>
-                            Este exemplo mostra um cenário típico de transporte rodoviário no Brasil. Clique em
-                            "Carregar Exemplo" para preencher automaticamente os dados do calculador.
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    <InfoButton
+                      content={
+                        <p>
+                          Este exemplo mostra um cenário típico de transporte rodoviário no Brasil. Clique em "Carregar
+                          Exemplo" para preencher automaticamente os dados do calculador.
+                        </p>
+                      }
+                      side="top"
+                    />
                   </div>
                   <CardDescription>{example.description}</CardDescription>
                 </CardHeader>
