@@ -19,7 +19,10 @@ export default function Home() {
             <ul className="list-disc pl-5 space-y-2 mb-3">
               <li>Uma árvore madura absorve aproximadamente 21 kg de CO2 por ano</li>
               <li>A queima de 1 litro de diesel produz aproximadamente 2,68 kg de CO2</li>
-              <li>1.000 litros de água têm uma pegada de carbono de aproximadamente 0,34 kg de CO2</li>
+              <li>
+                A produção de 1 litro de diesel consome aproximadamente 2,5 litros de água (considerando extração do
+                petróleo e refino)
+              </li>
             </ul>
             <p>
               Estes cálculos são estimativas e podem variar com base em condições específicas e fatores regionais do

@@ -5,6 +5,7 @@ import type { CalculatorData, CalculatorResults } from "./calculator"
 import { CircleDollarSign, Droplets, Leaf, Truck, Route, Package } from "lucide-react"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { WaterMethodologyDialog } from "@/components/water-methodology"
 
 interface ResultsDisplayProps {
   results: CalculatorResults
@@ -153,10 +154,16 @@ export function ResultsDisplay({ results, data }: ResultsDisplayProps) {
                       <Droplets className="h-6 w-6 text-green-700" />
                     </div>
                   </div>
-                  <h4 className="text-center text-green-800 font-medium mb-1">Equivalente em Água</h4>
+                  <h4 className="text-center text-green-800 font-medium mb-1">Pegada Hídrica</h4>
                   <p className="text-center text-2xl font-bold">{formatNumber(results.equivalentWater)} L</p>
-                  <p className="text-center text-xs text-gray-500 mt-1">Litros de água com a mesma pegada de carbono</p>
+                  <p className="text-center text-xs text-gray-500 mt-1">
+                    Água utilizada na extração e refino do diesel consumido
+                  </p>
                 </div>
+              </div>
+
+              <div className="flex justify-center mt-6">
+                <WaterMethodologyDialog />
               </div>
             </TabsContent>
 

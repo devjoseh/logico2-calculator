@@ -135,8 +135,10 @@ export function Calculator() {
     // 1 liter of diesel produces ~2.68kg CO2
     const equivalentDiesel = totalCO2 / 2.68
 
-    // 1000 liters of water has a carbon footprint of ~0.34kg CO2
-    const equivalentWater = totalCO2 / 0.00034
+    // Updated water footprint calculation based on scientific research:
+    // Average water footprint for diesel production in Brazil: 2.5 liters of water per liter of diesel
+    const waterFootprintPerLiterDiesel = 2.5 // liters of water per liter of diesel
+    const equivalentWater = fuelConsumed * waterFootprintPerLiterDiesel
 
     setResults({
       totalCO2,

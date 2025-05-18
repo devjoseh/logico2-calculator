@@ -20,7 +20,6 @@ const examples = [
     title: "Distribuição Regional",
     description: "Caminhão Toco transportando mercadorias entre cidades do interior de São Paulo",
     category: "regional",
-    co2: 187.6,
     trees: 8.93,
     diesel: 70.0,
     data: {
@@ -48,7 +47,6 @@ const examples = [
     title: "Transporte de Longa Distância",
     description: "Carreta transportando carga entre São Paulo e Rio de Janeiro pela Rodovia Dutra",
     category: "highway",
-    co2: 1073.2,
     trees: 51.1,
     diesel: 400.45,
     data: {
@@ -76,7 +74,6 @@ const examples = [
     title: "Transporte de Grãos",
     description: "Bi-trem transportando soja do Mato Grosso para o Porto de Santos",
     category: "agribusiness",
-    co2: 3245.8,
     trees: 154.56,
     diesel: 1211.12,
     data: {
@@ -104,7 +101,6 @@ const examples = [
     title: "Rota Serra do Mar",
     description: "Caminhão transportando carga pela Serra do Mar entre São Paulo e Santos",
     category: "challenging",
-    co2: 128.3,
     trees: 6.11,
     diesel: 47.87,
     data: {
@@ -132,7 +128,6 @@ const examples = [
     title: "Transporte com Biodiesel",
     description: "Caminhão utilizando biodiesel B100 para transporte de carga geral",
     category: "eco-friendly",
-    co2: 402.3,
     trees: 19.16,
     diesel: 150.11,
     data: {
@@ -160,7 +155,6 @@ const examples = [
     title: "Transporte de Gado",
     description: "Caminhão boiadeiro transportando gado entre fazendas e frigoríficos",
     category: "specialized",
-    co2: 856.2,
     trees: 40.77,
     diesel: 319.48,
     data: {
@@ -241,20 +235,6 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
                   <CardDescription>{example.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="pb-3">
-                  <div className="grid grid-cols-3 gap-2 text-center mb-3">
-                    <div>
-                      <p className="text-xs text-gray-500">CO2</p>
-                      <p className="font-semibold">{formatNumber(example.co2)} kg</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">Árvores</p>
-                      <p className="font-semibold">{formatNumber(example.trees)}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">Diesel</p>
-                      <p className="font-semibold">{formatNumber(example.diesel)} L</p>
-                    </div>
-                  </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <Truck className="h-4 w-4 text-green-700" />
@@ -311,20 +291,6 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
                   <CardDescription>{example.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="pb-3">
-                  <div className="grid grid-cols-3 gap-2 text-center mb-3">
-                    <div>
-                      <p className="text-xs text-gray-500">CO2</p>
-                      <p className="font-semibold">{formatNumber(example.co2)} kg</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">Árvores</p>
-                      <p className="font-semibold">{formatNumber(example.trees)}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">Diesel</p>
-                      <p className="font-semibold">{formatNumber(example.diesel)} L</p>
-                    </div>
-                  </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <Truck className="h-4 w-4 text-green-700" />
@@ -381,20 +347,6 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
                   <CardDescription>{example.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="pb-3">
-                  <div className="grid grid-cols-3 gap-2 text-center mb-3">
-                    <div>
-                      <p className="text-xs text-gray-500">CO2</p>
-                      <p className="font-semibold">{formatNumber(example.co2)} kg</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">Árvores</p>
-                      <p className="font-semibold">{formatNumber(example.trees)}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">Diesel</p>
-                      <p className="font-semibold">{formatNumber(example.diesel)} L</p>
-                    </div>
-                  </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <Truck className="h-4 w-4 text-green-700" />
@@ -451,20 +403,6 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
                   <CardDescription>{example.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="pb-3">
-                  <div className="grid grid-cols-3 gap-2 text-center mb-3">
-                    <div>
-                      <p className="text-xs text-gray-500">CO2</p>
-                      <p className="font-semibold">{formatNumber(example.co2)} kg</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">Árvores</p>
-                      <p className="font-semibold">{formatNumber(example.trees)}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">Diesel</p>
-                      <p className="font-semibold">{formatNumber(example.diesel)} L</p>
-                    </div>
-                  </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <Truck className="h-4 w-4 text-green-700" />
@@ -487,10 +425,7 @@ export function ExamplesTab({ setCalculatorData, setActiveTab }: ExamplesTabProp
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button
-                    onClick={() => handleLoadExample(example.data)}
-                    className="w-full bg-green-600 hover:bg-green-700"
-                  >
+                  <Button onClick={() => handleLoadExample(example.data)} className="w-full bg-green-600 hover:bg-green-700">
                     Carregar Exemplo
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
