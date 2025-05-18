@@ -163,7 +163,9 @@ export function ResultsDisplay({ results, data }: ResultsDisplayProps) {
               </div>
 
               <div className="flex justify-center mt-6">
-                <WaterMethodologyDialog />
+                <div className="bg-green-50 p-2 rounded-lg shadow-sm border border-green-100 pulse-animation">
+                  <WaterMethodologyDialog />
+                </div>
               </div>
             </TabsContent>
 
@@ -266,7 +268,7 @@ export function ResultsDisplay({ results, data }: ResultsDisplayProps) {
         </CardContent>
       </Card>
 
-      <div className="bg-white p-6 rounded-lg border">
+      {/* <div className="bg-white p-6 rounded-lg border">
         <h3 className="text-lg font-semibold text-green-800 mb-3">Recomendações para Redução de Impacto</h3>
         <ul className="space-y-2">
           <li className="flex items-start gap-2">
@@ -294,7 +296,7 @@ export function ResultsDisplay({ results, data }: ResultsDisplayProps) {
             <span>Participe de programas de compensação de carbono reconhecidos no Brasil</span>
           </li>
         </ul>
-      </div>
+      </div> */}
     </div>
   )
 }
