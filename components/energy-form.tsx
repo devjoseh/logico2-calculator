@@ -5,14 +5,8 @@ import type React from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Zap, Flame, Droplet, Thermometer } from "lucide-react"
-import type { CalculatorData } from "./calculator"
 
-interface EnergyFormProps {
-  data: CalculatorData["energy"]
-  updateData: (data: CalculatorData["energy"]) => void
-}
-
-export function EnergyForm({ data, updateData }: EnergyFormProps) {
+export function EnergyForm({ data, updateData }: any) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     const numValue = value === "" ? 0 : Number.parseFloat(value)

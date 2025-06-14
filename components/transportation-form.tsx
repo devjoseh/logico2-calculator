@@ -5,14 +5,8 @@ import type React from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Car, Bus, Train, Plane } from "lucide-react"
-import type { CalculatorData } from "./calculator"
 
-interface TransportationFormProps {
-  data: CalculatorData["transportation"]
-  updateData: (data: CalculatorData["transportation"]) => void
-}
-
-export function TransportationForm({ data, updateData }: TransportationFormProps) {
+export function TransportationForm({ data, updateData }: any) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     const numValue = value === "" ? 0 : Number.parseFloat(value)

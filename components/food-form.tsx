@@ -5,14 +5,8 @@ import type React from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Beef, Drumstick, Milk, Apple } from "lucide-react"
-import type { CalculatorData } from "./calculator"
 
-interface FoodFormProps {
-  data: CalculatorData["food"]
-  updateData: (data: CalculatorData["food"]) => void
-}
-
-export function FoodForm({ data, updateData }: FoodFormProps) {
+export function FoodForm({ data, updateData }: any) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     const numValue = value === "" ? 0 : Number.parseFloat(value)

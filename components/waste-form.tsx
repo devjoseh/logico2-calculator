@@ -5,14 +5,8 @@ import type React from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Trash2, Recycle, Leaf } from "lucide-react"
-import type { CalculatorData } from "./calculator"
 
-interface WasteFormProps {
-  data: CalculatorData["waste"]
-  updateData: (data: CalculatorData["waste"]) => void
-}
-
-export function WasteForm({ data, updateData }: WasteFormProps) {
+export function WasteForm({ data, updateData }: any) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     const numValue = value === "" ? 0 : Number.parseFloat(value)

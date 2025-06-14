@@ -7,7 +7,7 @@ export function LogoHeader() {
         <div className="relative">
           <div className="bg-white p-2 rounded-lg">
             <Image
-              src="logico2_logo.svg"
+              src="/logico2_logo.svg"
               alt="Logo da LogiCO2"
               width={60}
               height={60}
