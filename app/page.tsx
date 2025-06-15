@@ -70,52 +70,7 @@ const features = [
             "Exportação PDF",
             "Compliance ambiental",
         ],
-    },
-    {
-        id: "dashboard",
-        title: "Dashboard de Monitoramento",
-        description:
-            "Monitore em tempo real as emissões da sua frota com gráficos interativos e alertas personalizados.",
-        icon: BarChart3,
-        status: "development",
-        href: "#",
-        highlights: [
-            "Monitoramento em tempo real",
-            "Gráficos interativos",
-            "Alertas personalizados",
-            "KPIs ambientais",
-        ],
-    },
-    {
-        id: "fleet",
-        title: "Gestão de Frota Verde",
-        description:
-            "Gerencie sua frota com foco na sustentabilidade, monitorando performance ambiental de cada veículo.",
-        icon: Truck,
-        status: "development",
-        href: "#",
-        highlights: [
-            "Gestão centralizada",
-            "Performance por veículo",
-            "Manutenção preditiva",
-            "Eficiência energética",
-        ],
-    },
-    {
-        id: "api",
-        title: "API para Integração",
-        description:
-            "Integre os cálculos de CO2 diretamente em seus sistemas existentes através de nossa API robusta.",
-        icon: Zap,
-        status: "development",
-        href: "#",
-        highlights: [
-            "API RESTful",
-            "Documentação completa",
-            "SDKs disponíveis",
-            "Suporte técnico",
-        ],
-    },
+    }
 ];
 
 const benefits = [

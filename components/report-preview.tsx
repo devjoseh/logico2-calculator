@@ -25,15 +25,17 @@ import {
     Clock,
     Shield,
     Loader2,
+    ArrowLeft,
 } from "lucide-react";
 import type { ReportData } from "@/lib/report-data";
 import { generateAndDownloadPDF } from "@/lib/pdf-generator";
 
 interface ReportPreviewProps {
     data: ReportData;
+    onBack?: () => void;
 }
 
-export function ReportPreview({ data }: ReportPreviewProps) {
+export function ReportPreview({ data, onBack }: ReportPreviewProps) {
     const [activeSection, setActiveSection] = useState("summary");
     const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
 
@@ -52,6 +54,18 @@ export function ReportPreview({ data }: ReportPreviewProps) {
             style: "currency",
             currency: "BRL",
         }).format(value);
+    };
+
+    const formatDateBR = (dateString: string) => {
+        return new Date(dateString).toLocaleDateString("pt-BR", {
+            timeZone: "America/Sao_Paulo",
+        });
+    };
+
+    const formatDateTimeBR = (dateString: string) => {
+        return new Date(dateString).toLocaleString("pt-BR", {
+            timeZone: "America/Sao_Paulo",
+        });
     };
 
     const getStatusIcon = (status: string) => {
@@ -122,6 +136,14 @@ export function ReportPreview({ data }: ReportPreviewProps) {
 
     return (
         <div className="space-y-6">
+            {/* Back button if onBack is provided */}
+            {onBack && (
+                <Button variant="outline" onClick={onBack} className="mb-4">
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Voltar aos Modelos
+                </Button>
+            )}
+
             {/* Header do Relatório */}
             <Card className="bg-gradient-to-r from-green-50 to-green-100 border-green-200">
                 <CardHeader>
@@ -136,20 +158,12 @@ export function ReportPreview({ data }: ReportPreviewProps) {
                                 </p>
                                 <p>CNPJ: {data.company.cnpj}</p>
                                 <p>
-                                    Período:{" "}
-                                    {new Date(
-                                        data.period.start
-                                    ).toLocaleDateString("pt-BR")}{" "}
-                                    a{" "}
-                                    {new Date(
-                                        data.period.end
-                                    ).toLocaleDateString("pt-BR")}
+                                    Período: {formatDateBR(data.period.start)} a{" "}
+                                    {formatDateBR(data.period.end)}
                                 </p>
                                 <p>
                                     Gerado em:{" "}
-                                    {new Date(data.generatedAt).toLocaleString(
-                                        "pt-BR"
-                                    )}
+                                    {formatDateTimeBR(data.generatedAt)}
                                 </p>
                             </div>
                         </div>
@@ -616,6 +630,8 @@ export function ReportPreview({ data }: ReportPreviewProps) {
                                                     period.period
                                                 ).toLocaleDateString("pt-BR", {
                                                     month: "short",
+                                                    timeZone:
+                                                        "America/Sao_Paulo",
                                                 })}
                                             </div>
                                             <div className="col-span-3">
@@ -769,9 +785,7 @@ export function ReportPreview({ data }: ReportPreviewProps) {
                                                 Válido até:
                                             </span>
                                             <span className="font-medium ml-2">
-                                                {new Date(
-                                                    cert.validUntil
-                                                ).toLocaleDateString("pt-BR")}
+                                                {formatDateBR(cert.validUntil)}
                                             </span>
                                         </div>
                                     </div>
@@ -798,13 +812,6 @@ export function ReportPreview({ data }: ReportPreviewProps) {
                             </p>
                         </div>
                         <div className="flex gap-3">
-                            <Button
-                                variant="outline"
-                                onClick={() => window.print()}
-                            >
-                                <FileText className="mr-2 h-4 w-4" />
-                                Imprimir
-                            </Button>
                             <Button
                                 onClick={handleDownloadPDF}
                                 className="bg-green-600 hover:bg-green-700"
