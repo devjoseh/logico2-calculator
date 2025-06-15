@@ -57,6 +57,21 @@ const features = [
         ],
     },
     {
+        id: "reports",
+        title: "Relatórios e Análises",
+        description:
+            "Gere relatórios completos de sustentabilidade e análises comparativas para tomada de decisão.",
+        icon: FileText,
+        status: "available",
+        href: "/reports",
+        highlights: [
+            "Relatórios automáticos",
+            "Análises comparativas",
+            "Exportação PDF",
+            "Compliance ambiental",
+        ],
+    },
+    {
         id: "dashboard",
         title: "Dashboard de Monitoramento",
         description:
@@ -69,21 +84,6 @@ const features = [
             "Gráficos interativos",
             "Alertas personalizados",
             "KPIs ambientais",
-        ],
-    },
-    {
-        id: "reports",
-        title: "Relatórios e Análises",
-        description:
-            "Gere relatórios completos de sustentabilidade e análises comparativas para tomada de decisão.",
-        icon: FileText,
-        status: "development",
-        href: "#",
-        highlights: [
-            "Relatórios automáticos",
-            "Análises comparativas",
-            "Exportação PDF",
-            "Compliance ambiental",
         ],
     },
     {
@@ -265,9 +265,9 @@ export default function LandingPage() {
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                             Explore as principais funcionalidades da LogiCO2. A
-                            calculadora e o planejador de rotas estão
-                            disponíveis para teste, enquanto outras
-                            funcionalidades estão em desenvolvimento.
+                            calculadora, o planejador de rotas e o gerador de
+                            relatórios estão disponíveis para teste, enquanto
+                            outras funcionalidades estão em desenvolvimento.
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -360,6 +360,15 @@ export default function LandingPage() {
                                 className="bg-green-700 text-white hover:bg-green-800 px-8 py-3"
                             >
                                 Planejar Rotas
+                                <ArrowRight className="ml-2 h-5 w-5" />
+                            </Button>
+                        </Link>
+                        <Link href="/reports">
+                            <Button
+                                size="lg"
+                                className="bg-green-500 text-white hover:bg-green-600 px-8 py-3"
+                            >
+                                Gerar Relatórios
                                 <ArrowRight className="ml-2 h-5 w-5" />
                             </Button>
                         </Link>
